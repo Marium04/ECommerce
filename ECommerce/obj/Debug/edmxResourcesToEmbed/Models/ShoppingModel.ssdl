@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShoppingModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ShoppingModelStoreContainer">
+    <EntitySet Name="Cart" EntityType="ShoppingModel.Store.Cart" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="ShoppingModel.Store.Category" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="ShoppingModel.Store.Customer" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="ShoppingModel.Store.Products" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="ProductCode" />
+    </Key>
+    <Property Name="ProductCode" Type="nchar" Nullable="false" MaxLength="4" />
+    <Property Name="Quantity" Type="numeric" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CatID" />
+    </Key>
+    <Property Name="CatID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CatName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TotalItems" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Img" Type="nvarchar" MaxLength="100" />
+    <Property Name="Thumbnail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Code" Type="nchar" MaxLength="4" />
+  </EntityType>
+</Schema>

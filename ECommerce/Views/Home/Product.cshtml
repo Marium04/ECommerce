@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    var countr = 0;
+}
+@RenderPage(@"~/Views/Shared/_LeftPan.cshtml")
+<div style="height:700px"><!-- put your slideshow images here -->
+    <br />
+    <br />
+    <br />
+    @foreach(var row in Model){
+                            if(countr==4){
+                                break;
+                            }
+                            var name=row.Name;
+                            var code=row.Code;
+                            var price=Convert.ToDouble(row.Price);
+                            var thumb=row.Img;
+                            countr++;
+                            @ProductHelpers.ProductInfo(name,code,price,thumb,row.ID);
+                        }
+</div>

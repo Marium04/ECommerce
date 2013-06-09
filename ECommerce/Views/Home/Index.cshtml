@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    if(Request.Cookies["error"] == null)
+    {
+        Response.Cookies ["error"].Value = "";
+    }
+
+    if (Request.Cookies["error"] != null)
+    {
+        Response.Cookies["error"].Value = "";
+    }
+}
+<div id="banner" class="slideshowContainer"><!-- put your slideshow images here -->
+    <div class="slideshow" style="margin-left:130px">
+        <a href="#" title="Facade" target="_blank">
+            <img src="../images/Slider/winterwear.jpg" alt="Facade"/>
+        </a>
+        <a href="#" title="Twisted building" target="_blank" >
+            <img src="../images/Slider/breakbounce.jpg"  alt="Twisted Building"/>
+        </a>
+        <a href="#" title="Working late" target="_blank">
+            <img src="../images/Slider/homepage.jpg" alt="Working Late"/>
+        </a>
+    </div>
+    <div class="slideshowLeftCorner"></div>
+    <div class="slideshowRightCorner"></div>
+    <div class="slideshowBottom"></div>
+</div>

@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Manage Products";
+    string path = "";
+}
+@if(WebSecurity.IsCurrentUser("admin@yahoo.com")==true)
+{
+<div style="height:2000px">
+<div class="one_fourth bloc rounded" style="margin-top:53px;margin-left:170px;height:1800px;width:800px;">
+    <div><span>
+        <br/><br /><a href="@Href("~/Admin/AddProduct")" title="Add New Product" style="color:#8BA870;font-style: italic;margin-left:690px">Add New Product</a></span></div><br />
+    <table style="margin-left:100px" class="alerts">
+            <thead>
+                <tr>
+                    <th class="alertHd">Code</th>
+                    <th class="alertHd">Name</th>
+                    <th class="alertHd">Price</th>
+                    <th class="alertHd">Description</th>
+                    <th class="alertHd">Category</th>
+                    <th class="alertHd" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var row in Model){
+                    <tr>
+                        <td class="alertBod">@row.Code</td>
+                        <td class="alertBod">@row.Name</td>
+                        <td class="alertBod">@row.Price</td>
+                        <td class="alertBod">@row.Description</td>
+                        <td class="alertBod">@row.Category</td>
+                        @{path=@"/Admin/DeleteProduct/"+row.ID;   }
+                        <td class="alertBod"><a href="@path"><img alt="" src="~/images/css/delete.png" height="20" width="20"/></a></td>
+                        @{path=@"/Admin/UpdateProduct/"+row.ID;   }
+                        <td class="alertBod"><a href="@path"><img alt="" src="~/images/css/edit.ico" height="20" width="20"/></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>
+    </div>
+}
+else
+{
+    Response.Redirect("~/Account/Login/");
+}

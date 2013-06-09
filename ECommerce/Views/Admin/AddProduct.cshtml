@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Add New Product";
+}
+@{
+    
+}
+@if(WebSecurity.IsCurrentUser("admin@yahoo.com")==true)
+{
+<form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <legend> Add Product</legend>
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Name" style="margin-right:49px">Product Name</label>
+                <input name="Name" type="text" class="eight" id="Name"/><br />
+                @Html.ValidationMessage("Product Name is required.")
+                
+            </span>
+        </div>
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Description" style="margin-right:16px">Product Description</label>
+                <input name="Description" type="text" id="Description"/><br />
+                @Html.ValidationMessage("Product Description is required.")
+            </span>
+        </div>
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Price" style="margin-right:52px">Product Price</label>
+                <input name="Price" type="text" id="Price"/><br />
+                @Html.ValidationMessage("Product Price is required.")
+            </span>
+        </div> 
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Category" style="margin-right:30px">Product Category</label>
+                <input name="Category" type="text" id="Category"/>
+                @Html.ValidationMessage("Product Category is required.")
+                <br />
+            </span>
+        </div>
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Code" style="margin-right:30px">Product Code</label>
+                <input name="Code" type="text" id="Code"/>
+                @Html.ValidationMessage("Product Code is required.")
+                <br />
+            </span>
+        </div>
+        <div style="margin-bottom:20px">
+            <span>
+                <label for="Image" style="margin-right:53px">Product Image</label>
+                <input type="file" name="Image" id="Image"/>
+                @Html.ValidationMessage("Product Image is required.")
+                <br/>
+            </span>
+        </div>
+        <span>
+            <label style="margin-right:606px"></label>
+            <input id="save" type="submit" value="Save" />
+        </span>
+    </fieldset>
+</form>
+}
+else
+{
+    Response.Redirect("~/Account/Login");
+}

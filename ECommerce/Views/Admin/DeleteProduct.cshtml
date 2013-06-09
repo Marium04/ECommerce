@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "DeleteProduct";
+}
+
+@if(WebSecurity.IsCurrentUser("admin@yahoo.com")==true)
+{
+<form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend> Delete Product</legend>
+        Do you really want to delete it?
+        <div style="float:left;margin-top:60px;margin-left:30px;margin-right:60px"><img src="@Model.Img" height="300" width="360"/></div>
+            <div style="margin-top:50px">
+                <h2>@Model.Name</h2>
+                <strong><p>@Model.Code</p></strong>
+                
+        <span>
+            <strong style="margin-right:130px;color:black"><em>Price:</em></strong><strong>@Model.Price</strong>
+        </span><p style="font-style:italic;font-size:15px">&quot @Model.Description &quot</p>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+                <p><input type="submit" value="Delete" /></p>
+        </div>
+    </fieldset>
+</form>
+}
+else
+{
+    Response.Redirect("~/Account/Login/");
+}

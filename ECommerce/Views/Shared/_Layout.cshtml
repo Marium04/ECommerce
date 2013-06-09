@@ -1,0 +1,64 @@
+﻿@{
+    if (Request.Cookies["error"] == null)
+    {
+        Response.Cookies["error"].Value = "";
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My ASP.NET Web Page - @ViewBag.Title</title>
+        <link href="@Href("~/Content/Site.css")" rel="stylesheet" />
+        <link href="@Href("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+        <script type="text/javascript"  src="/js/addon.js"></script>
+        <script type="text/javascript" src="/js/custom.js"></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="header">
+                <p class="site-title">My ASP.NET Web Page</p>
+                <div id="login">
+                    @if (WebSecurity.IsAuthenticated && WebSecurity.IsCurrentUser("admin@yahoo.com") == true)
+                    {
+                        <p>
+                            Welcome <a href="@Href("~/Account/ChangePassword")" title="Change password">@WebSecurity.CurrentUserName</a>|
+                            <a href="@Href("~/Home/Cart/")">View Cart</a>|
+                            <a href="@Href("~/Admin/ListProducts")">Manage Products</a>|
+                            <a href="@Href("~/Account/LogOff")">Logout</a>
+                        </p>
+                    }
+                    else if (WebSecurity.IsAuthenticated) {
+                        <p>
+                            Welcome <a href="@Href("~/Account/Manage")" title="Change password">@WebSecurity.CurrentUserName</a>|
+                            <a href="@Href("~/Home/ViewCart/")">View Cart</a>|
+                            <a href="@Href("~/Account/LogOff")">Logout</a>
+                        </p>
+                    }
+                    else {
+                        <ul>
+                            <li><a href="@Href("~/Account/Register")">Register</a></li>
+                            <li><a href="@Href("~/Account/Login")">Login</a></li>
+                        </ul>
+                    }
+                </div>
+                <ul id="menu">
+                    <li><a href="@Href("~/")">Home</a></li>
+                    <li><a href="@Href("~/Home/Product")">Products</a></li>
+                    <li><a href="@Href("~/Home/About")">About</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <div id="content">
+                    <span stlye="color:#8506A9;padding-bottom:0;margin-bottom:0;text-shadow:0 1px 0"><p>@ViewBag.Title</p></span>
+                    @RenderBody()
+                </div>
+                <div id="footer">
+                    <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/mariumaskri12"
+        style="border:none; width:450px; height:80px;"></iframe>| 
+                    &copy; @DateTime.Now.Year - My ASP.NET Web Page
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

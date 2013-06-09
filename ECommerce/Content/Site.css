@@ -1,0 +1,405 @@
+﻿/*SLIDESHOW
+    ---------------------------------------*/
+#banner {
+	margin:15px auto;
+	width:100%;
+}
+
+.slideshow { 
+	height: 300.0px;
+	width:100%;
+	margin: 0 auto ;
+}
+
+
+.slideshow img { 
+	padding: 0; 
+	margin:0;
+	width:920px;
+	height:300.0px;
+}
+
+.slideshow a img { border:none } 
+
+.slideshowContainer {
+	display:block;
+	clear:both;
+	width:100%;
+	position:relative;
+}
+
+
+
+
+.slideshowBottom {
+	clear:both;
+	height:20px;
+	position:absolute;
+	top:280.0px;
+	width:920px;
+	z-index:10;
+	background:url('../images/css/slideshowBottom.png') no-repeat scroll center center transparent;
+}
+
+.slideshowLeftCorner {
+	height:10px;
+	position:absolute;
+	top:0;
+	left:0;
+	width:10px;
+	z-index:10;
+	background:url('../images/css/slideshowLeftCorner.png') no-repeat scroll center center transparent;
+}
+
+.slideshowRightCorner {
+	height:10px;
+	position:absolute;
+	top:0;
+	left:910px;
+	width:10px;
+	z-index:10;
+	background:url('../images/css/slideshowRightCorner.png') no-repeat scroll center center transparent;
+}/*GENERAL STYLES
+     --------------------------------------------------------*/
+body {
+    background-color: #8506A9;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #8506A9;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+/*TABLE STYLES
+    -----------------------------*/
+table.alerts
+{	text-align: center;
+font-family: Verdana;
+font-weight: normal;
+font-size: 11px;
+color: #404040;
+width: 260px;
+background-color: #fafafa;
+border: 1px #d79900 solid;
+border-collapse: collapse;
+border-spacing: 20px;}
+
+
+.alertHd
+{	border-bottom: 2px solid #d79900;
+background-color: #fff2ba;
+text-align: center;
+font-family: Verdana;
+font-weight: bold;
+font-size: 11px;
+color: #404040;
+padding:24px 24px 24px 24px;
+}
+
+
+.alertBod
+{	text-align: center;
+font-family: Verdana, sans-serif, Arial;
+padding:24px 24px 24px 24px;
+font-weight: normal;
+font-size: 11px;
+line-height: 12px;
+color: #404040;
+background-color: #fafafa;
+text-indent: -8px;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 5px;
+margin-bottom: 5px;}
+/*LEFT SIDEBAR
+    -----------------------------*/
+#leftPan{width:176px; float:left; padding-right:35px;}
+
+#categories { padding-bottom:20px;}
+#categories h3{height:23px; background: 0 0 no-repeat; position:relative; padding-bottom:5px;}
+#categories ul{padding-left:10px}
+#categories ul li a{display:block; height:20px; background:url('../images/bullet.jpg') 0 6px no-repeat; font:11px/20px Tahoma, Arial, Helvetica, sans-serif;  font-weight:normal; text-decoration:none; padding:0 0 0 23px;}
+#categories ul li a:hover{text-decoration:underline; } 
+ul{list-style-type:none;}
+/*VALIDATION
+    ------------------------------------------------------*/
+.validation-summary-errors {font-weight:bold; color:red;font-size: 8pt;}
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #8506A9;
+}
+
+h1, h2 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-shadow: 0 1px 0 rgba(133, 6, 169, 0.15);
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+#page {
+    width: 90%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    #header {
+        position: relative;
+        margin-bottom: 0;
+        color: #caa2d5;
+        padding: 0;
+    }
+
+    #main {
+        padding: 30px 30px 15px 30px;
+        background-color: #fff;
+        margin-bottom: 30px;
+    
+        /*CSS3 properties*/
+        -webkit-border-radius: 4px 0 4px 4px;
+        -moz-border-radius: 4px 0 4px 4px;
+        border-radius: 4px 0 4px 4px;
+    }
+
+    #footer {
+        padding: 10px 0;
+        text-align: center;
+        line-height: normal;
+        margin: 0;
+        font-size: .9em;
+    }
+
+/* Site Title 
+----------------------------------------------------------*/
+#header .site-title {
+    float: left;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px;
+    
+    /*CSS3 properties*/
+    text-shadow: 1px 1px 2px #111;
+}/*----------------Products----------------------*/
+.one_fourth {
+	float:left;
+	margin-right:40px;
+	width:290px;
+	margin-bottom:20px;
+    height: 235px;
+	position:relative;
+	
+}
+.bloc h3 {
+	margin-top:10px;
+}
+
+.bloc {
+	padding:15px;
+	background-color:#caa2d5;
+}
+.bloc1 {
+	margin: 20px;
+	background-color:#caa2d5;
+}
+/* Login Display  
+----------------------------------------------------------*/
+#login {
+    float: right;
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    color: #000;
+}
+
+    #login li {
+        margin: 0;
+        display: inline;
+        list-style: none;
+        padding-left: 5px;
+    }
+    
+    #login a:link, #login a:visited {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #login a:hover
+    {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+/* Tab Menu   
+----------------------------------------------------------*/
+ul#menu {
+    clear: both;
+    border-bottom: 1px #caa2d5 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+    ul#menu li {
+        display: inline;
+        list-style: none;
+
+    }
+
+        ul#menu li a {
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8em;
+            background-color: #CAA2D5;
+            color: #8506A9;
+            
+            /*CSS3 properties*/
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+        }
+
+        ul#menu li a:hover {
+            background-color: #fff;
+            text-decoration: none;
+        }
+
+        ul#menu li a:active {
+            background-color: #a6e2a6;
+            text-decoration: none;
+        }
+
+        ul#menu li.selected a {
+            background-color: #fff;
+            color: #000;
+        }
+        
+/* forms   
+----------------------------------------------------------*/
+fieldset {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+    fieldset legend {
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 2px 4px 8px 4px;
+    }
+    
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+        fieldset ol li {
+            padding-bottom: 5px;
+        }
+    
+    fieldset label {
+        display: block;
+    }
+    
+    fieldset label.checkbox {
+        display: inline;
+    }
+    
+    fieldset input[type="text"], input[type="password"] {
+        border: 1px solid #ccc;
+        padding: 2px;
+        font-size: 1.2em;
+        color: #444;
+        width: 300px;
+    }
+
+    fieldset input[type="submit"] {
+        font-size: 1.2em;
+        padding: 5px;
+    }
+    
+ /* Information and errors  
+----------------------------------------------------------*/  
+.message {
+    clear: both;
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 15px;
+    
+    /*CSS3 properties*/
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 5px #888;
+    -moz-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 5px #888;
+}
+
+.info {
+    background: #bde5f8;
+    color: #00529b;
+}
+
+.error {
+    background: #ffe4e4;
+    color: #be3e16;
+}
+
+.success {
+    background: #dff2bf;
+    color: #4f8a10;
+}
+
+input[type="text"].error-field, input[type="password"].error-field { 
+    border: solid 1px #be3e16; 
+    background-color: #ffe4e4;
+}
+
+.validation-error {
+    display: inline;
+    color: #be3e16;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+    .validation-error:before {
+        content: "»";
+    }

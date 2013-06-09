@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Product Details:: ";
+}
+@RenderPage(@"~/Views/Shared/_LeftPan.cshtml")
+<form action="@Href("~/Home/ProductDetails/",@Model.ID)" method="post" enctype="multipart/form-data">
+    <div style="height:700px">
+        <div class="one_fourth bloc rounded" style="margin-top:53px;height:460px;width:800px">
+            <div style="float:left;margin-top:60px;margin-left:30px;margin-right:60px"><img src="@Model.Img" height="300" width="360"/></div>
+            <div style="margin-top:50px">
+                <center>
+                    <p class="validation-summary-errors" style="font-weight:bold; color:red;font-size: 8pt;">@Request.Cookies["error"].Value</p>
+                </center>
+                <h2>@Model.Name</h2>
+                <strong><p>@Model.Code</p></strong>
+                
+        <span>
+            <strong style="margin-right:130px;color:black"><em>Price:</em></strong><strong>@Model.Price</strong>
+        </span><p style="font-style:italic;font-size:15px">&quot @Model.Description &quot</p>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <span><input type="submit" value="Add to Cart" /></span></div>
+        </div>
+</div>
+    </form>
+@Response.Cookies ["error"].Value = "";

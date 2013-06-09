@@ -1,0 +1,13 @@
+﻿@helper ProductInfo(string name1, string code, double price,string path,int id)
+{
+    <div style="margin-left:40px" class="one_fourth">
+        <div class="bloc rounded">
+            <h3>@name1</h3>
+            <p>
+                <center><img alt="@name1" src="@path" width="135" height="65"/></center>
+                <span style="margin-left:40px;margin-right:20px;color:black"><strong>Product Code:</strong></span> @code
+            </p>
+            <span><strong style="margin-left:40px;margin-right:80px;color:black"><em>Price:</em></strong>@price <br/><br /><a href="@Href("~/Home/ProductDetails",id)" title="View Detail" style="color: #f00;font-style: italic;margin-left:180px">View Detail</a></span>
+        </div> 
+    </div>
+}

@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "ViewCart";
+    double bill = 0.0d;
+}
+
+<div style="height:700px">
+    <div class="one_fourth bloc rounded" style="margin-top:53px;margin-left:170px;height:600px;width:800px;">
+        <p>Total Items in the cart: @Request.Cookies["items"].Value</p>
+        <table style="margin-left:160px" class="alerts">
+            <thead><tr><th class="alertHd">Product Code</th><th class="alertHd">Product Name</th><th class="alertHd">Product Price</th><th class="alertHd">Product Quantity</th><th class="alertHd">Quantity * Price</th></tr></thead>
+            <tbody>
+                @{
+                    foreach (var row in Model)
+                    {
+                        if (Request.Cookies[row.Code] != null)
+                        {
+                            var qty=Convert.ToInt32(Request.Cookies[row.Code].Value);
+                            double amt = (row.Price * qty);
+                            bill += amt;
+                            
+                            <tr>
+                                <td class="alertBod">@row.Code</td>
+                                <td class="alertBod">@row.Name</td>
+                                <td class="alertBod">@row.Price</td>
+                                <td class="alertBod">@Request.Cookies[row.Code].Value</td>
+                                <td class="alertBod">@amt</td>
+                            </tr>
+                        }
+                    }
+                   }
+                <tr>
+                    <td class="alertBod">@String.Empty</td>
+                    <td class="alertBod">@String.Empty</td>
+                    <td class="alertBod">@String.Empty</td>
+                    <td class="alertBod">@String.Empty</td>
+                    <td class="alertBod">Total: @bill</td>
+                </tr>
+            </tbody>
+        </table>
+        @{
+            //Clearing cookies
+            if (Request.Cookies["items"] != null)
+            {
+                Response.Cookies["items"].Expires = DateTime.Now.AddDays(-1d);
+            }
+            foreach (var row in Model)
+            {
+                if (Request.Cookies[row.Code] != null)
+                {
+                    Response.Cookies[row.Code].Expires = DateTime.Now.AddDays(-1d);
+                }
+            }
+            <input type="button" value="Buy Now" />
+          }
+        <!--div style="float:right;margin:0 0 0 8px;margin-top:30px">@*payPalButtonHtml*@</div---->
+    </div>
+</div>
